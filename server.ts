@@ -12,7 +12,7 @@ app.use('/auth', authRoutes);
 const startServer = async () => {
     try {
         await sequelize.authenticate();
-        await sequelize.sync();
+        await sequelize.sync({ alter: true });
         console.log('Connected to SQLite database.');
 
         // Lancement du serveur
